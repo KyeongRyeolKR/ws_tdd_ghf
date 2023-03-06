@@ -30,4 +30,16 @@ public class WiseSaying {
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
     }
+
+    public String toJson() {
+        return """
+                {
+                    "id": %d,
+                    "content": "%s",
+                    "authorName": "%s"
+                }
+                """
+                .stripIndent()
+                .formatted(id, content, authorName);
+    }
 }

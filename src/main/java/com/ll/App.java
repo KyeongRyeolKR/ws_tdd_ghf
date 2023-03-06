@@ -7,13 +7,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    private WiseSayingController wiseSayingController;
+    private final WiseSayingController wiseSayingController;
 
     public App() {
         this.wiseSayingController = new WiseSayingController();
     }
-
-
 
     public void run() {
         System.out.println("== 명언 앱 ==");
