@@ -6,24 +6,25 @@ import java.util.Scanner;
 
 public class App {
     private Scanner sc;
+    private List<WiseSaying> wiseSayings;
     public App(Scanner sc) {
         this.sc = sc;
+        this.wiseSayings = new ArrayList<>();
     }
 
     public void run() {
         System.out.println("== 명언 앱 ==");
 
         long lastWiseSayingId = 0;
-        List<WiseSaying> wiseSayings = new ArrayList<>();
 
         while(true) {
             System.out.print("명령) ");
 
             String cmd = sc.nextLine().trim();
 
-            if(cmd.isEmpty()) continue;
+            Rq rq = new Rq(cmd);
 
-            switch (cmd) {
+            switch (rq.getActionCode()) {
                 case "종료":
                     System.out.println("프로그램이 종료되었습니다.");
                     return;
@@ -48,9 +49,28 @@ public class App {
                         System.out.printf("%d / %s / %s\n", wiseSaying.getId(), wiseSaying.getAuthorName(), wiseSaying.getContent());
                     }
                     break;
+                case "삭제":
+                    remove(rq);
+                    break;
                 default:
                     System.out.printf("`%s`(은)는 올바르지 않은 명령입니다.\n", cmd);
                     break;
+            }
+        }
+    }
+    public void remove(Rq rq) {
+        long id = rq.getLongParam("id", -1);
+
+        if(id == -1) {
+            System.out.println("id(정수)를 입력해주세요.");
+            return;
+        }
+
+        for(WiseSaying wiseSaying : wiseSayings) {
+            if(wiseSaying.getId() == id) {
+                wiseSayings.remove(wiseSaying);
+                System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
+                return;
             }
         }
     }

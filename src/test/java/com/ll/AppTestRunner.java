@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class AppTestRunner {
     public static String run(String input) {
+
+        if(input.isEmpty()) input = "종료";
+
         input += "\n종료";
         // 스캐너를 얻는다.
         // 평범한 스캐너가 아닌, 문자열을 입력으로 삼는 스캐너가 생성된다.

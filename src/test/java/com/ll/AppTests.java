@@ -115,4 +115,33 @@ public class AppTests {
                 .contains("2 / 이순신 / 나의 죽음을 적들에게 알리지 마라.")
                 .contains("1 / 작자미상 / 현재를 사랑하라.");
     }
+
+    @Test
+    @DisplayName("삭제?id=(정수)를 입력하면 해당 숫자의 id를 갖는 명언을 삭제한다.")
+    public void t8() {
+        String rs = AppTestRunner.run("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                등록
+                나의 죽음을 적들에게 알리지 마라.
+                이순신
+                등록
+                왼손은 거들뿐
+                강백호
+                목록
+                삭제?id=1
+                """);
+
+        assertThat(rs)
+                .contains("1번 명언이 등록되었습니다.")
+                .contains("2번 명언이 등록되었습니다.")
+                .contains("3번 명언이 등록되었습니다.")
+                .doesNotContain("4번 명언이 등록되었습니다.")
+                .contains("번호 / 작가 / 명언")
+                .contains("3 / 강백호 / 왼손은 거들뿐")
+                .contains("2 / 이순신 / 나의 죽음을 적들에게 알리지 마라.")
+                .contains("1 / 작자미상 / 현재를 사랑하라.")
+                .contains("1번 명언이 삭제되었습니다.");
+    }
 }
