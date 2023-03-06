@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    private Scanner sc;
     private WiseSayingController wiseSayingController;
 
-    public App(Scanner sc) {
-        this.sc = sc;
-        this.wiseSayingController = new WiseSayingController(sc);
+    public App() {
+        this.wiseSayingController = new WiseSayingController();
     }
+
+
 
     public void run() {
         System.out.println("== 명언 앱 ==");
@@ -21,7 +21,7 @@ public class App {
         while(true) {
             System.out.print("명령) ");
 
-            String cmd = sc.nextLine().trim();
+            String cmd = Container.getScanner().nextLine().trim();
 
             Rq rq = new Rq(cmd);
 

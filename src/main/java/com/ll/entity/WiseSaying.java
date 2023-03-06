@@ -1,4 +1,4 @@
-package com.ll;
+package com.ll.entity;
 
 public class WiseSaying {
     private long id;
