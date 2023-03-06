@@ -191,8 +191,8 @@ public class AppTests {
                 강백호
                 목록
                 수정?id=1
-                수정된 명언
-                수정된 작가이름
+                11
+                11
                 """);
 
         assertThat(rs)
@@ -205,8 +205,9 @@ public class AppTests {
                 .contains("2 / 이순신 / 나의 죽음을 적들에게 알리지 마라.")
                 .contains("1 / 작자미상 / 현재를 사랑하라.")
                 .contains("명언(기존) : 현재를 사랑하라.")
-                .contains("명언 : 수정된 명언")
+                .contains("명언 : ")
                 .contains("작가(기존) : 작자미상")
-                .contains("작가 : 수정된 작가이름");
+                .contains("작가 : ")
+                .contains("1번 명언이 수정되었습니다.");
     }
 }
