@@ -39,6 +39,9 @@ public class App {
                 case "수정":
                     wiseSayingController.modify(rq);
                     break;
+                case "빌드":
+                    wiseSayingController.build();
+                    break;
                 default:
                     System.out.printf("`%s`(은)는 올바르지 않은 명령입니다.\n", cmd);
                     break;

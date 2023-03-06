@@ -40,6 +40,7 @@ public class WiseSaying {
                 }
                 """
                 .stripIndent()
-                .formatted(id, content, authorName);
+                .formatted(id, content, authorName)
+                .trim();
     }
 }

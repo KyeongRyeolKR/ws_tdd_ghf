@@ -14,7 +14,7 @@ public class WiseSayingRepository {
         wiseSayingTable = new WiseSayingTable();
     }
 
-    public List<WiseSaying> findALl() {
+    public List<WiseSaying> findAll() {
         return wiseSayingTable.findAll();
     }
 
