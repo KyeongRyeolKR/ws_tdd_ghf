@@ -15,7 +15,7 @@ public class UtilTests {
         Map<String, Object> map = Util.json.jsonToMapFromFile("testData/1.json");
 
         Map<String, Object> expected = Map.of(
-                "id", 1,
+                "id", (long)1,
                 "content", "나의 죽음을 적들에게 알리지 말라",
                 "authorName", "이순신"
         );

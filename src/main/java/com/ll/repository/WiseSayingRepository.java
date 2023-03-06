@@ -2,48 +2,39 @@ package com.ll.repository;
 
 import com.ll.entity.WiseSaying;
 import com.ll.service.WiseSayingService;
+import com.ll.table.WiseSayingTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WiseSayingRepository {
-    private final List<WiseSaying> wiseSayings;
-    private long lastWiseSayingId;
+    private final WiseSayingTable wiseSayingTable;
 
     public WiseSayingRepository() {
-        this.wiseSayings = new ArrayList<>();
-        this.lastWiseSayingId = 0;
+        wiseSayingTable = new WiseSayingTable();
     }
 
     public List<WiseSaying> findALl() {
-        return wiseSayings;
+        return wiseSayingTable.findAll();
     }
 
     public WiseSaying findById(long id) {
-        for(WiseSaying wiseSaying : wiseSayings) {
-            if(wiseSaying.getId() == id) {
-                return wiseSaying;
-            }
-        }
-        return null;
+        return wiseSayingTable.findById(id);
     }
 
     public long write(String content, String authorName) {
-        long id = ++lastWiseSayingId;
+        long id = wiseSayingTable.getLastId() + 1;
 
-        wiseSayings.add(new WiseSaying(id, content, authorName));
+        WiseSaying wiseSaying = new WiseSaying(id, content, authorName);
 
-        lastWiseSayingId = id;
-
-        return id;
+        return wiseSayingTable.save(wiseSaying);
     }
 
     public void remove(WiseSaying wiseSaying) {
-        wiseSayings.remove(wiseSaying);
+        wiseSayingTable.remove(wiseSaying);
     }
 
     public void modify(WiseSaying wiseSaying, String content, String authorName) {
-        wiseSaying.setContent(content);
-        wiseSaying.setAuthorName(authorName);
+        wiseSayingTable.modify(wiseSaying, content, authorName);
     }
 }

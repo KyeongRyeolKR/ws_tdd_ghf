@@ -34,7 +34,7 @@ public class Util {
                     .map(String::trim)
                     .flatMap(bit -> Arrays.stream(bit.split(":")))
                     .map(String::trim)
-                    .map(s -> s.startsWith("\"") ? s.substring(1, s.length() - 1) : Integer.parseInt(s))
+                    .map(s -> s.startsWith("\"") ? s.substring(1, s.length() - 1) : Long.parseLong(s))
                     .collect(Collectors.toList());
 
             Map<String, Object> map = IntStream
