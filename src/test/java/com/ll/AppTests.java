@@ -88,4 +88,31 @@ public class AppTests {
                 .contains("3번 명언이 등록되었습니다.")
                 .doesNotContain("4번 명언이 등록되었습니다.");
     }
+
+    @Test
+    @DisplayName("목록을 최신 등록 순으로 출력한다.")
+    public void t7() {
+        String rs = AppTestRunner.run("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                등록
+                나의 죽음을 적들에게 알리지 마라.
+                이순신
+                등록
+                왼손은 거들뿐
+                강백호
+                목록
+                """);
+
+        assertThat(rs)
+                .contains("1번 명언이 등록되었습니다.")
+                .contains("2번 명언이 등록되었습니다.")
+                .contains("3번 명언이 등록되었습니다.")
+                .doesNotContain("4번 명언이 등록되었습니다.")
+                .contains("번호 / 작가 / 명언")
+                .contains("3 / 강백호 / 왼손은 거들뿐")
+                .contains("2 / 이순신 / 나의 죽음을 적들에게 알리지 마라.")
+                .contains("1 / 작자미상 / 현재를 사랑하라.");
+    }
 }
