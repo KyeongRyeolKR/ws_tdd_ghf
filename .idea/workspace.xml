@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d6596ff-9c49-49ba-97cd-0f61bf79eb7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ll/AppTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/AppTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/AppTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AppTests.t2">
     <configuration name="AppTests.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ws_tdd_ghf.test" />
       <extension name="coverage">
@@ -60,8 +58,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTests.t2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ws_tdd_ghf.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ll" />
+      <option name="MAIN_CLASS_NAME" value="com.ll.AppTests" />
+      <option name="METHOD_NAME" value="t2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTests.t2" />
         <item itemvalue="JUnit.AppTests.t1" />
       </list>
     </recent_temporary>
