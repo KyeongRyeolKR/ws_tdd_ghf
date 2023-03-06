@@ -73,5 +73,6 @@ public class App {
                 return;
             }
         }
+        System.out.printf("%d번 명언이 존재하지 않습니다.\n", id);
     }
 }
